@@ -1,3 +1,15 @@
+[comment]: # "Auto-generated SOAR connector documentation"
+# Oletools
+
+Publisher: Splunk Community  
+Connector Version: 1\.0\.2  
+Product Vendor: decalage2  
+Product Name: oletools  
+Product Version Supported (regex): "\.\*"  
+Minimum Product Version: 4\.9\.39220  
+
+This app provides actions to analyze Microsoft OLE2 files such as Microsoft Office Documents of Outlook messages\. It is based on the oletools toolkit
+
 [comment]: # " File: readme.md"
 [comment]: # "  Copyright (c) 2021 Splunk Inc."
 [comment]: # ""
@@ -57,3 +69,54 @@ This app uses the olefile module, which is licensed under the BSD License (BSD),
 
   
 **Note:** The app is not making any REST call. Therefore, the proxy settings will be ignored.
+
+
+### Supported Actions  
+[test connectivity](#action-test-connectivity) - Validate the asset configuration for connectivity using supplied configuration  
+[run mraptor scan](#action-run-mraptor-scan) - Perform a MacroRaptor scan on a file  
+
+## action: 'test connectivity'
+Validate the asset configuration for connectivity using supplied configuration
+
+Type: **test**  
+Read only: **True**
+
+#### Action Parameters
+No parameters are required for this action
+
+#### Action Output
+No Output  
+
+## action: 'run mraptor scan'
+Perform a MacroRaptor scan on a file
+
+Type: **investigate**  
+Read only: **True**
+
+#### Action Parameters
+PARAMETER | REQUIRED | DESCRIPTION | TYPE | CONTAINS
+--------- | -------- | ----------- | ---- | --------
+**vault\_id** |  required  | Vault ID of the file to scan | string |  `vault id` 
+
+#### Action Output
+DATA PATH | TYPE | CONTAINS
+--------- | ---- | --------
+action\_result\.parameter\.vault\_id | string |  `vault id` 
+action\_result\.data\.\*\.mraptor\.autoexec | string | 
+action\_result\.data\.\*\.mraptor\.execute | string | 
+action\_result\.data\.\*\.mraptor\.suspicious | string | 
+action\_result\.data\.\*\.mraptor\.vba\_code | string | 
+action\_result\.data\.\*\.mraptor\.write | string | 
+action\_result\.data\.\*\.oleid\.ObjectPool\.value | string | 
+action\_result\.data\.\*\.oleid\.container\.value | string | 
+action\_result\.data\.\*\.oleid\.encrypted\.value | string | 
+action\_result\.data\.\*\.oleid\.ext\_rels\.value | string | 
+action\_result\.data\.\*\.oleid\.flash\.value | string | 
+action\_result\.data\.\*\.oleid\.ftype\.value | string | 
+action\_result\.data\.\*\.oleid\.vba\.value | string | 
+action\_result\.data\.\*\.oleid\.xlm\.value | string | 
+action\_result\.status | string | 
+action\_result\.summary | string | 
+action\_result\.message | string | 
+summary\.total\_objects | numeric | 
+summary\.total\_objects\_successful | numeric | 
