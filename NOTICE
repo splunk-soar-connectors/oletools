@@ -1,18 +1,7 @@
 Splunk SOAR Oletools
-Copyright 2021 Splunk Inc.
+Copyright (c) 2021 Splunk Inc.
 
 Third-party Software Attributions:
-
-Library: pycparser
-Version: 2.20
-License: BSD 3
-Copyright 2008-2017 Eli Bendersky
-Copyright parser in Python
-
-Library: pudb
-Version: 2019.2
-License: MIT
-Copyright 2009 Andreas Kloeckner and contributors
 
 Library: requests
 Version: 2.25.0
